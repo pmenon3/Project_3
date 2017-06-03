@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603153808) do
+ActiveRecord::Schema.define(version: 20170603212420) do
 
   create_table "histories", force: :cascade do |t|
     t.string   "pseudoID"
