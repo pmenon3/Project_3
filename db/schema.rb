@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601190518) do
+ActiveRecord::Schema.define(version: 20170603153808) do
+
+  create_table "histories", force: :cascade do |t|
+    t.string   "pseudoID"
+    t.string   "course_data"
+    t.integer  "course_num"
+    t.integer  "year"
+    t.integer  "quarter_num"
+    t.string   "quarter_text"
+    t.integer  "section"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "recommendations", force: :cascade do |t|
     t.integer  "user_num"
