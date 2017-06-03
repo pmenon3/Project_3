@@ -13,7 +13,7 @@ namespace :slurp do
       r.pseudoID = row["pseudoID"]
       r.course_id = row["course_id"]
       r.cluster = row["cluster"]
-      r.course_name = row["couse_name"]
+      r.course_name = row["course_name"]
       r.save
     end
     puts "There are now #{Recommendation.count} rows in the recommendations table"
