@@ -54,3 +54,10 @@ ActiveRecord::Schema.define(version: 20170603212420) do
   end
 
 end
+
+
+# this is how to add columns
+# rails generate migration add_fieldname_to_tablename fieldname:string
+# rails generate migration add_user_num_to_history user_num:integer
+
+# rake db:migrate

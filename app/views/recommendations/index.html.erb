@@ -1,6 +1,8 @@
 <div class="page-header">
   <h1>
-    {user_name}, below are your recommendations
+    <%= current_user.email %>, below are your recommendations
+
+    <%= current_user.id %>
     <a href="/histories" class="btn btn-lg btn-success">Course History</a>
   </h1>
 </div>
@@ -16,7 +18,9 @@
       <% @recommendations.each do |recommendation| %>
       <tr>
 
-        <td><%= recommendation.course_id %></td>
+        <td><%= recommendation.course_id %> |
+<%= recommendation.user_num %>
+        </td>
         <td><%= recommendation.course_name %></td>
 
       </tr>
