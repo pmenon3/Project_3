@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603212420) do
+ActiveRecord::Schema.define(version: 20170604161606) do
 
   create_table "histories", force: :cascade do |t|
     t.string   "pseudoID"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20170603212420) do
     t.integer  "section"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "user_num"
+    t.string   "course_name"
   end
 
   create_table "recommendations", force: :cascade do |t|
@@ -32,6 +34,7 @@ ActiveRecord::Schema.define(version: 20170603212420) do
     t.string   "course_name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,10 +57,3 @@ ActiveRecord::Schema.define(version: 20170603212420) do
   end
 
 end
-
-
-# this is how to add columns
-# rails generate migration add_fieldname_to_tablename fieldname:string
-# rails generate migration add_user_num_to_history user_num:integer
-
-# rake db:migrate

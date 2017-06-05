@@ -1,6 +1,8 @@
 class HistoriesController < ApplicationController
   def index
-    @histories = History.all
+    # @histories = History.all
+
+    @histories = History.where({:user_num => current_user.id})
 
     render("histories/index.html.erb")
   end

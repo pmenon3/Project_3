@@ -1,6 +1,6 @@
 <div class="page-header">
   <h1>
-    Hello <%= current_user.email %> below is your course history
+    <%= current_user.email %> below is your course history
     <a href="/recommendations" class="btn btn-lg btn-success">Course Recommendations</a>
   </h1>
 </div>
@@ -10,38 +10,41 @@
     <table class="table table-striped table-hover">
       <tr>
         <th>Course Number</th>
+        <th>Course Name</th>
         <th>Year</th>
         <th>Quarter</th>
         <th>Section</th>
         <th>Personal Rating</th>
-        <th></th>
-      </tr>
+        <th><a href="/methodology">
+          How is this used?
+        </a>
+      </th>
+    </tr>
 
-      <% @histories.each do |history| %>
-      <tr>
+    <% @histories.each do |history| %>
+    <tr>
 
 
-        <td><%= history.course_num %></td>
-        <td><%= history.year %></td>
+      <td><%= history.course_num %></td>
+      <td><%= history.course_name %></td>
+      <td><%= history.year %></td>
+      <td><%= history.quarter_text %></td>
+      <td><%= history.section %></td>
+      <td>
+        <form action="www.localhost:3000/histories" method="post">
+          <div class="wrapper">
 
-        <td><%= history.quarter_text %></td>
-        <td><%= history.section %></td>
-        <td>
-          <form action="/recommendations" method="post">
-            <div class="wrapper">
-
-              <input name="course_rating" type="integer" placeholder="Test" class="form-control" style=style="width: 80%;">
-
-            </div>
-          </form>
-        </td>
-        <td>
-          <button class="btn btn-primary" style="float: middle">
-            Update Rating
-          </button>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
+            <input name="course_rating" type="integer" placeholder="Input Rating (1 to 5)" class="form-control" style=style="width: 10%;">
+          </div>
+        </form>
+      </td>
+      <td>
+        <button class="btn btn-primary" style="float: middle">
+          Update Rating
+        </button>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
 </div>

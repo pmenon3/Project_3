@@ -1,6 +1,8 @@
 class RecommendationsController < ApplicationController
   def index
-    @recommendations = Recommendation.all
+    #@recommendations = Recommendation.all
+
+    @recommendations = Recommendation.where({:user_id => current_user.id})
 
     render("recommendations/index.html.erb")
   end
