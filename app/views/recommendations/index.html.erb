@@ -1,6 +1,6 @@
 <div class="page-header">
   <h2>
-    <%= current_user.email %>, below are your recommendations
+    <%= current_user.email.split("@").first %> below are your recommendations
     <a href="/histories" class="btn btn-lg btn-success">View Course History</a>
   </h2>
   <h5>

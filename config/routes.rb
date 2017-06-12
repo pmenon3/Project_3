@@ -3,7 +3,15 @@ Rails.application.routes.draw do
 
   devise_for :users
   #here's the root:
-  root "histories#index"
+  root "histories#dashboard"
+
+  ##routes for creating the methodology
+
+  get "/methodology", :controller => "histories", :action => "methodology"
+
+  ##routes for dashboard
+
+  get "/dashboard", :controller => "histories", :action => "dashboard"
 
   # Routes for the History resource:
   # CREATE

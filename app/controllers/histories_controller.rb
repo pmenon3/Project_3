@@ -7,6 +7,22 @@ class HistoriesController < ApplicationController
     render("histories/index.html.erb")
   end
 
+  #this is just for the methodology
+
+  def methodology
+
+    render("methodology.html.erb")
+
+  end
+
+  #this is just for the dashboard
+
+  def dashboard
+
+    render("dashboard.html.erb")
+
+  end
+
   def show
     @history = History.find(params[:id])
 

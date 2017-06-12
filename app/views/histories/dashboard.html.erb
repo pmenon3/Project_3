@@ -1,0 +1,40 @@
+<h2>
+  Hello <%= current_user.email %> below is your dashboard:
+</h2>
+
+<hr>
+
+<p>
+
+  <ul>
+    <li>
+      There are <%= Recommendation.distinct.count(:user_id) %>
+      full-time MBA students contained in the database.
+      <a href = "https://community.chicagobooth.edu/welcome">
+        Click here for the student directory
+      </a>
+
+    </li>
+    <li>
+      There are <%= History.count %> courses in the course history database.
+      <a href="/history">
+        Click here for your course history
+      </a>
+    </li>
+    <li>
+      There are <%= Recommendation.count %> recommendations in the database
+      <a href="/recommendations">
+        Click here for your course recommendations
+      </a>
+    </li>
+    <li>
+      <!-- The below is hard-coded; in the future this would be dynamic -->
+      The average rating you gave a course is 4.0 with a standard deviation of 0.5.
+      <a href="/methodology">
+        Click here to learn more about how the recommendations are developed
+      </a>
+    </li>
+
+  </ul>
+
+</p>
