@@ -1,5 +1,5 @@
 <h2>
-  Hello <%= current_user.email %> below is your dashboard:
+  Hello <%= current_user.email.split("@").first %> below is your dashboard:
 </h2>
 
 <hr>
@@ -17,7 +17,7 @@
     </li>
     <li>
       There are <%= History.count %> courses in the course history database.
-      <a href="/history">
+      <a href="/histories">
         Click here for your course history
       </a>
     </li>
